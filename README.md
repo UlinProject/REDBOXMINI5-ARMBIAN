@@ -52,8 +52,8 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 |1c20800.pinctrl|1|PA1||
 |1c20800.pinctrl|2|PA2||
 |1c20800.pinctrl|3|PA3||
-|1c20800.pinctrl|4|PA4|1c28000.uart, uart0 group PA4, <UART>|
-|1c20800.pinctrl|5|PA5|1c28000.uart, uart0 group PA5, <UART>|
+|1c20800.pinctrl|4|PA4|1c28000.uart, uart0 group PA4, <b>UART</b>|
+|1c20800.pinctrl|5|PA5|1c28000.uart, uart0 group PA5, <b>UART</b>|
 |1c20800.pinctrl|6|PA6||
 |1c20800.pinctrl|7|PA7||
 |1c20800.pinctrl|8|PA8||
@@ -63,7 +63,7 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 |1c20800.pinctrl|12|PA12||
 |1c20800.pinctrl|13|PA13||
 |1c20800.pinctrl|14|PA14||
-|1c20800.pinctrl|15|PA15|1c20800.pinctrl:15, <LED> pwr_led |
+|1c20800.pinctrl|15|PA15|1c20800.pinctrl:15, <b>LED</b> pwr_led |
 |1c20800.pinctrl|16|PA16|1c20800.pinctrl:16|
 |1c20800.pinctrl|17|PA17|1c21000.spdif-controller, spdif0 group PA17 |
 |1c20800.pinctrl|18|PA18|1c2b000.twi, twi1 group PA18|
@@ -71,22 +71,22 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 |1c20800.pinctrl|20|PA20||
 |1c20800.pinctrl|21|PA21||
 |1c20800.pinctrl|64|PC0||
-|1c20800.pinctrl|65|PC1|1c11000.sdmmc,  spi0 group PC1 <EMMC>|
+|1c20800.pinctrl|65|PC1|1c11000.sdmmc,  spi0 group PC1 <b>EMMC</b>|
 |1c20800.pinctrl|66|PC2||
 |1c20800.pinctrl|67|PC3||
 |1c20800.pinctrl|68|PC4||
-|1c20800.pinctrl|69|PC5|1c11000.sdmmc,  sdc2 group PC5 <EMMC>|
-|1c20800.pinctrl|70|PC6|1c11000.sdmmc,  sdc2 group PC6 <EMMC>|
+|1c20800.pinctrl|69|PC5|1c11000.sdmmc,  sdc2 group PC5 <b>EMMC</b>|
+|1c20800.pinctrl|70|PC6|1c11000.sdmmc,  sdc2 group PC6 <b>EMMC</b>|
 |1c20800.pinctrl|71|PC7||
-|1c20800.pinctrl|72|PC8|1c11000.sdmmc,  sdc2 group PC8 <EMMC>|
-|1c20800.pinctrl|73|PC9|1c11000.sdmmc,  sdc2 group PC9 <EMMC>|
-|1c20800.pinctrl|74|PC10|1c11000.sdmmc,  sdc2 group PC10 <EMMC>|
-|1c20800.pinctrl|75|PC11|1c11000.sdmmc,  sdc2 group PC11 <EMMC>|
-|1c20800.pinctrl|76|PC12|1c11000.sdmmc,  sdc2 group PC12 <EMMC>|
-|1c20800.pinctrl|77|PC13|1c11000.sdmmc,  sdc2 group PC13 <EMMC>|
-|1c20800.pinctrl|78|PC14|1c11000.sdmmc,  sdc2 group PC14 <EMMC>|
-|1c20800.pinctrl|79|PC15|1c11000.sdmmc,  sdc2 group PC15 <EMMC>|
-|1c20800.pinctrl|80|PC16|1c11000.sdmmc,  sdc2 group PC16 <EMMC>|
+|1c20800.pinctrl|72|PC8|1c11000.sdmmc,  sdc2 group PC8 <b>EMMC</b>|
+|1c20800.pinctrl|73|PC9|1c11000.sdmmc,  sdc2 group PC9 <b>EMMC</b>|
+|1c20800.pinctrl|74|PC10|1c11000.sdmmc,  sdc2 group PC10 <b>EMMC</b>|
+|1c20800.pinctrl|75|PC11|1c11000.sdmmc,  sdc2 group PC11 <b>EMMC</b>|
+|1c20800.pinctrl|76|PC12|1c11000.sdmmc,  sdc2 group PC12 <b>EMMC</b>|
+|1c20800.pinctrl|77|PC13|1c11000.sdmmc,  sdc2 group PC13 <b>EMMC</b>|
+|1c20800.pinctrl|78|PC14|1c11000.sdmmc,  sdc2 group PC14 <b>EMMC</b>|
+|1c20800.pinctrl|79|PC15|1c11000.sdmmc,  sdc2 group PC15 <b>EMMC</b>|
+|1c20800.pinctrl|80|PC16|1c11000.sdmmc,  sdc2 group PC16 <b>EMMC</b>|
 |1c20800.pinctrl|81|PC17||
 |1c20800.pinctrl|82|PC18||
 |1c20800.pinctrl|96|PD0||
@@ -123,19 +123,19 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 |1c20800.pinctrl|141|PE13||
 |1c20800.pinctrl|142|PE14||
 |1c20800.pinctrl|143|PE15||
-|1c20800.pinctrl|160|PF0|1c0f000.sdmmc, group PF0 <SDCARD>|
-|1c20800.pinctrl|161|PF1|1c0f000.sdmmc, group PF1 <SDCARD>|
-|1c20800.pinctrl|162|PF2|1c0f000.sdmmc, group PF2 <SDCARD>|
-|1c20800.pinctrl|163|PF3|1c0f000.sdmmc, group PF3 <SDCARD>|
-|1c20800.pinctrl|164|PF4|1c0f000.sdmmc, group PF4 <SDCARD>|
-|1c20800.pinctrl|165|PF5|1c0f000.sdmmc, group PF5 <SDCARD>|
-|1c20800.pinctrl|166|PF6|1c20800.pinctrl:166, sdcard0 cd-gpios <SDCARD>|
-|1c20800.pinctrl|192|PG0|1c10000.sdmmc,  sdc1 group PG0 <WIFI>|
-|1c20800.pinctrl|193|PG1|1c10000.sdmmc,  sdc1 group PG1 <WIFI>|
-|1c20800.pinctrl|194|PG2|1c10000.sdmmc,  sdc1 group PG2 <WIFI>|
-|1c20800.pinctrl|195|PG3|1c10000.sdmmc,  sdc1 group PG3 <WIFI>|
-|1c20800.pinctrl|196|PG4|1c10000.sdmmc,  sdc1 group PG4 <WIFI>|
-|1c20800.pinctrl|197|PG5|1c10000.sdmmc,  sdc1 group PG5 <WIFI>|
+|1c20800.pinctrl|160|PF0|1c0f000.sdmmc, group PF0 <b>SDCARD</b>|
+|1c20800.pinctrl|161|PF1|1c0f000.sdmmc, group PF1 <b>SDCARD</b>|
+|1c20800.pinctrl|162|PF2|1c0f000.sdmmc, group PF2 <b>SDCARD</b>|
+|1c20800.pinctrl|163|PF3|1c0f000.sdmmc, group PF3 <b>SDCARD</b>|
+|1c20800.pinctrl|164|PF4|1c0f000.sdmmc, group PF4 <b>SDCARD</b>|
+|1c20800.pinctrl|165|PF5|1c0f000.sdmmc, group PF5 <b>SDCARD</b>|
+|1c20800.pinctrl|166|PF6|1c20800.pinctrl:166, sdcard0 cd-gpios <b>SDCARD</b>|
+|1c20800.pinctrl|192|PG0|1c10000.sdmmc,  sdc1 group PG0 <b>WIFI</b>|
+|1c20800.pinctrl|193|PG1|1c10000.sdmmc,  sdc1 group PG1 <b>WIFI</b>|
+|1c20800.pinctrl|194|PG2|1c10000.sdmmc,  sdc1 group PG2 <b>WIFI</b>|
+|1c20800.pinctrl|195|PG3|1c10000.sdmmc,  sdc1 group PG3 <b>WIFI</b>|
+|1c20800.pinctrl|196|PG4|1c10000.sdmmc,  sdc1 group PG4 <b>WIFI</b>|
+|1c20800.pinctrl|197|PG5|1c10000.sdmmc,  sdc1 group PG5 <b>WIFI</b>|
 |1c20800.pinctrl|198|PG6|1c28400.uart,  uart1 group PG6|
 |1c20800.pinctrl|199|PG7|1c28400.uart,  uart1 group PG7|
 |1c20800.pinctrl|200|PG8|1c28400.uart,  uart1 group PG8|
@@ -147,15 +147,15 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 |_||||
 |1f02c00.pinctrl|352|PL0|1f02400.s_twi 1f02c00.pinctrl:352, s_twi0 group PL0 <b>TODO</b> WIFI wlan_regon? |
 |1f02c00.pinctrl|353|PL1|1f02400.s_twi 1f02c00.pinctrl:353, s_twi0 group PL1 <b>TODO</b> WIFI bt_rst? |
-|1f02c00.pinctrl|354|PL2|1f02c00.pinctrl:354, USB DC/DC converter output (5V)|
-|1f02c00.pinctrl|355|PL3|1f02c00.pinctrl:355, <V1, KEY> button reset |
-|1f02c00.pinctrl|356|PL4|<b>TODO?! ONLY FOR V2</b>, 1f02c00.pinctrl:356, <V2, KEY> button power (not soldered) |
+|1f02c00.pinctrl|354|PL2|1f02c00.pinctrl:354, USB DC/DC converter output (5V) |
+|1f02c00.pinctrl|355|PL3|1f02c00.pinctrl:355, <b>V1, KEY</b> button reset |
+|1f02c00.pinctrl|356|PL4|<b>TODO?! ONLY FOR V2</b>, 1f02c00.pinctrl:356, <b>V2, KEY</b> button power (not soldered) |
 |1f02c00.pinctrl|357|PL5| <b>TODO</b> UNKNOWN, It is not recommended to use as it will most likely damage the chip. |
 |1f02c00.pinctrl|358|PL6| <b>TODO</b> UNKNOWN |
 |1f02c00.pinctrl|359|PL7|1f02c00.pinctrl:359, <b>TODO</b> WIFI DC/DC 1.8V? |
 |1f02c00.pinctrl|360|PL8| <b>TODO</b> UNKNOWN, It is not recommended to use as it will most likely damage the chip. |
 |1f02c00.pinctrl|361|PL9| <b>TODO?!</b> Most likely, this is the enabling pin of the DC/DC converter on the DRAM circuit (1.5V). |
-|1f02c00.pinctrl|362|PL10|1f02c00.pinctrl:362, <V1, LED> status_led |
+|1f02c00.pinctrl|362|PL10|1f02c00.pinctrl:362, <b>V1, LED</b> status_led |
 |1f02c00.pinctrl|363|PL11|1f02000.s_cir, s_cir0 IR |
 
 ### POWER TABLE
