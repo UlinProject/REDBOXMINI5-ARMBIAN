@@ -1,6 +1,8 @@
 # REDBOXMINI5-ARMBIAN
 All technical information about the REDBOX MINI 5 device, including the ability to build the Linux ARMBIAN distribution.
 
+<center><img src="./img/V1GRAPHARMBIAN.jpg" width="40%"></img></center>
+
 <b><i>!!ATTENTION!!</i></b>
 
 <b><i>// The data in this repository is experimental and may contain errors. I do not provide ready-made assemblies; it is up to the user to decide whether to use this data or not, to collect an image to run third-party software or not.</i></b>
@@ -8,7 +10,11 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 <b><i>// This repository was originally developed only for V1, later only the V2 version was added. Versions with less RAM and permanent memory and a different processor were not considered.</i></b>
 
 ### Board versions:
+
 #### V1:
+
+<b><img src="./img/V101.jpg" width="20%"></img><img src="./img/V102.jpg" width="20%"></img></b>
+
 <b>CPU:</b> Allwinner H5 (AArch64, x4, 0.2Ghz-0.912Ghz <b>(1.01 GHz works too)</b>)
 
 <b>MEM:</b> 1GB (DDR3, 336.00 GHz - 672.00 GHz <b>(1344.01 GHz works too)</b>)
@@ -17,11 +23,14 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 
 <b>WI-FI:</b> XR819 (was not considered)
 
-<b>EMMC:</b> Q2J55L (7.09 GiB) (works, installation is not guaranteed)
+<b>EMMC:</b> Q2J55L (7.09 GiB) (works but not guaranteed)
 
 <b>GPIO:</b> LED_PWR (1c20800, 15-PA15), LED_STATUS (1f02c00, 362-PL10), IR (1f02c00, 363-PL11), KEY_RESET (1f02c00, 355-PL3) (On this board you can get absolutely any gpio that is available on allwinner h5 (I’m just giving a list of those pins that you can get without much effort).)
 
 #### V2:
+
+<b><img src="./img/V201.jpg" width="20%"></img><img src="./img/V202.jpg" width="20%"></img></b>
+
 <b>CPU:</b> Allwinner H5 (AArch64, x4, 0.2Ghz-0.912Ghz <b>(1.01 GHz works too)</b>)
 
 <b>MEM:</b> 1GB (DDR3, 336.00 GHz - 672.00 GHz <b>(1344.01 GHz works too)</b>)
@@ -29,6 +38,10 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 <b>Eth:</b> Internal (100mbit)
 
 <b>WI-FI:</b> XR819 (was not considered)
+
+<b>EMMC:</b> (works but not guaranteed)
+
+<b>GPIO:</b> LED1 (1c20800, 15-PA15), LED2 (1f02c00, 362-PL10), KEY_POWER (1f02c00.pinctrl:356, PL4)
 
 ### GPIO TABLE
 <i>This table is not complete and was written more for version V1.</i>
@@ -52,7 +65,7 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 |1c20800.pinctrl|14|PA14||
 |1c20800.pinctrl|15|PA15|1c20800.pinctrl:15, <LED> pwr_led |
 |1c20800.pinctrl|16|PA16|1c20800.pinctrl:16|
-|1c20800.pinctrl|17|PA17|1c21000.spdif-controller,  spdif0 group PA17 |
+|1c20800.pinctrl|17|PA17|1c21000.spdif-controller, spdif0 group PA17 |
 |1c20800.pinctrl|18|PA18|1c2b000.twi, twi1 group PA18|
 |1c20800.pinctrl|19|PA19|1c2b000.twi, twi1 group PA19|
 |1c20800.pinctrl|20|PA20||
@@ -145,11 +158,24 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 |1f02c00.pinctrl|362|PL10|1f02c00.pinctrl:362, <V1, LED> status_led |
 |1f02c00.pinctrl|363|PL11|1f02000.s_cir, s_cir0 IR |
 
+### POWER TABLE
+
+<i>This table is not complete and was written more for version V1.</i>
+
+|VALUE|FUNCTION|
+|-----|--------|
+|3.3  |SYS     |
+|1.1  |CPUA    |
+|1.5  |DRAM    |
+|5.0  |USB     |
+|3.3  |WIFI    |
+
+
 ### Quick answers to questions:
 
 #### Will there be support for 1.2/1.5 GHz processor frequencies?
 
-These set-top boxes do not have an adjustable VDD-CPUX regulator (either using a GPIO transistor or an i2c regulator) and use a constant voltage of 1.1V to operate. This does not improve power savings or increase the supply voltage to 1.3V in situations where it is needed.
+These boxes do not have an adjustable VDD-CPUX regulator (usually this can be implemented with either a GPIO transistor or an i2c regulator) and use a constant voltage of 1.1V to operate. This does not improve power savings and does not increase the supply voltage to 1 ,3 V.V in situations where it is necessary. Without a voltage of 1.3V it is impossible to obtain these frequencies.
 
 #### Will there be WI-FI support?
 
