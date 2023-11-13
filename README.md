@@ -8,7 +8,7 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 <b><i>// This repository was originally developed only for V1, later only the V2 version was added. Versions with less RAM and permanent memory and a different processor were not considered.</i></b>
 
 ### Board versions:
-## V1:
+#### V1:
 <b>CPU:</b> Allwinner H5 (AArch64, x4, 0.2Ghz-0.912Ghz <b>(1.01 GHz works too)</b>)
 
 <b>MEM:</b> 1GB (DDR3, 336.00 GHz - 672.00 GHz <b>(1344.01 GHz works too)</b>)
@@ -21,7 +21,7 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 
 <b>GPIO:</b> LED_PWR (1c20800, 15-PA15), LED_STATUS (1f02c00, 362-PL10), IR (1f02c00, 363-PL11), KEY_RESET (1f02c00, 355-PL3) (On this board you can get absolutely any gpio that is available on allwinner h5 (I’m just giving a list of those pins that you can get without much effort).)
 
-## V2:
+#### V2:
 <b>CPU:</b> Allwinner H5 (AArch64, x4, 0.2Ghz-0.912Ghz <b>(1.01 GHz works too)</b>)
 
 <b>MEM:</b> 1GB (DDR3, 336.00 GHz - 672.00 GHz <b>(1344.01 GHz works too)</b>)
@@ -30,6 +30,120 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 
 <b>WI-FI:</b> XR819 (was not considered)
 
+### GPIO TABLE
+<i>This table is not complete and was written more for version V1.</i>
+
+|CHIP|NUM|NAME|FUNCTION|
+|----|---|----|--------|
+|1c20800.pinctrl|0|PA0||
+|1c20800.pinctrl|1|PA1||
+|1c20800.pinctrl|2|PA2||
+|1c20800.pinctrl|3|PA3||
+|1c20800.pinctrl|4|PA4|1c28000.uart, uart0 group PA4, <UART>|
+|1c20800.pinctrl|5|PA5|1c28000.uart, uart0 group PA5, <UART>|
+|1c20800.pinctrl|6|PA6||
+|1c20800.pinctrl|7|PA7||
+|1c20800.pinctrl|8|PA8||
+|1c20800.pinctrl|9|PA9||
+|1c20800.pinctrl|10|PA10||
+|1c20800.pinctrl|11|PA11|1c20800.pinctrl:11, <b>TODO</b> WIFI wlan_hostwake? |
+|1c20800.pinctrl|12|PA12||
+|1c20800.pinctrl|13|PA13||
+|1c20800.pinctrl|14|PA14||
+|1c20800.pinctrl|15|PA15|1c20800.pinctrl:15, <LED> pwr_led |
+|1c20800.pinctrl|16|PA16|1c20800.pinctrl:16|
+|1c20800.pinctrl|17|PA17|1c21000.spdif-controller,  spdif0 group PA17 |
+|1c20800.pinctrl|18|PA18|1c2b000.twi, twi1 group PA18|
+|1c20800.pinctrl|19|PA19|1c2b000.twi, twi1 group PA19|
+|1c20800.pinctrl|20|PA20||
+|1c20800.pinctrl|21|PA21||
+|1c20800.pinctrl|64|PC0||
+|1c20800.pinctrl|65|PC1|1c11000.sdmmc,  spi0 group PC1|
+|1c20800.pinctrl|66|PC2||
+|1c20800.pinctrl|67|PC3||
+|1c20800.pinctrl|68|PC4||
+|1c20800.pinctrl|69|PC5|1c11000.sdmmc,  sdc2 group PC5|
+|1c20800.pinctrl|70|PC6|1c11000.sdmmc,  sdc2 group PC6|
+|1c20800.pinctrl|71|PC7||
+|1c20800.pinctrl|72|PC8|1c11000.sdmmc,  sdc2 group PC8|
+|1c20800.pinctrl|73|PC9|1c11000.sdmmc,  sdc2 group PC9|
+|1c20800.pinctrl|74|PC10|1c11000.sdmmc,  sdc2 group PC10|
+|1c20800.pinctrl|75|PC11|1c11000.sdmmc,  sdc2 group PC11|
+|1c20800.pinctrl|76|PC12|1c11000.sdmmc,  sdc2 group PC12|
+|1c20800.pinctrl|77|PC13|1c11000.sdmmc,  sdc2 group PC13|
+|1c20800.pinctrl|78|PC14|1c11000.sdmmc,  sdc2 group PC14|
+|1c20800.pinctrl|79|PC15|1c11000.sdmmc,  sdc2 group PC15|
+|1c20800.pinctrl|80|PC16|1c11000.sdmmc,  sdc2 group PC16|
+|1c20800.pinctrl|81|PC17||
+|1c20800.pinctrl|82|PC18||
+|1c20800.pinctrl|96|PD0||
+|1c20800.pinctrl|97|PD1||
+|1c20800.pinctrl|98|PD2||
+|1c20800.pinctrl|99|PD3||
+|1c20800.pinctrl|100|PD4||
+|1c20800.pinctrl|101|PD5||
+|1c20800.pinctrl|102|PD6||
+|1c20800.pinctrl|103|PD7||
+|1c20800.pinctrl|104|PD8||
+|1c20800.pinctrl|105|PD9||
+|1c20800.pinctrl|106|PD10||
+|1c20800.pinctrl|107|PD11||
+|1c20800.pinctrl|108|PD12||
+|1c20800.pinctrl|109|PD13||
+|1c20800.pinctrl|110|PD14||
+|1c20800.pinctrl|111|PD15||
+|1c20800.pinctrl|112|PD16||
+|1c20800.pinctrl|113|PD17||
+|1c20800.pinctrl|128|PE0||
+|1c20800.pinctrl|129|PE1||
+|1c20800.pinctrl|130|PE2||
+|1c20800.pinctrl|131|PE3||
+|1c20800.pinctrl|132|PE4||
+|1c20800.pinctrl|133|PE5||
+|1c20800.pinctrl|134|PE6||
+|1c20800.pinctrl|135|PE7||
+|1c20800.pinctrl|136|PE8||
+|1c20800.pinctrl|137|PE9||
+|1c20800.pinctrl|138|PE10||
+|1c20800.pinctrl|139|PE11||
+|1c20800.pinctrl|140|PE12||
+|1c20800.pinctrl|141|PE13||
+|1c20800.pinctrl|142|PE14||
+|1c20800.pinctrl|143|PE15||
+|1c20800.pinctrl|160|PF0|1c0f000.sdmmc, group PF0|
+|1c20800.pinctrl|161|PF1|1c0f000.sdmmc, group PF1|
+|1c20800.pinctrl|162|PF2|1c0f000.sdmmc, group PF2|
+|1c20800.pinctrl|163|PF3|1c0f000.sdmmc, group PF3|
+|1c20800.pinctrl|164|PF4|1c0f000.sdmmc, group PF4|
+|1c20800.pinctrl|165|PF5|1c0f000.sdmmc, group PF5|
+|1c20800.pinctrl|166|PF6|1c20800.pinctrl:166, sdcard0 cd-gpios|
+|1c20800.pinctrl|192|PG0|1c10000.sdmmc,  sdc1 group PG0|
+|1c20800.pinctrl|193|PG1|1c10000.sdmmc,  sdc1 group PG1|
+|1c20800.pinctrl|194|PG2|1c10000.sdmmc,  sdc1 group PG2|
+|1c20800.pinctrl|195|PG3|1c10000.sdmmc,  sdc1 group PG3|
+|1c20800.pinctrl|196|PG4|1c10000.sdmmc,  sdc1 group PG4|
+|1c20800.pinctrl|197|PG5|1c10000.sdmmc,  sdc1 group PG5|
+|1c20800.pinctrl|198|PG6|1c28400.uart,  uart1 group PG6 <DISABLE>|
+|1c20800.pinctrl|199|PG7|1c28400.uart,  uart1 group PG7 <DISABLE>|
+|1c20800.pinctrl|200|PG8|1c28400.uart,  uart1 group PG8 <DISABLE>|
+|1c20800.pinctrl|201|PG9|1c28400.uart,  uart1 group PG9 <DISABLE>|
+|1c20800.pinctrl|202|PG10|1c22400.daudio,  pcm1 group PG10|
+|1c20800.pinctrl|203|PG11|1c22400.daudio,  pcm1 group PG11|
+|1c20800.pinctrl|204|PG12|1c22400.daudio,  pcm1 group PG12|
+|1c20800.pinctrl|205|PG13|1c22400.daudio,  pcm1 group PG13|
+|_||||
+|1f02c00.pinctrl|352|PL0|1f02400.s_twi 1f02c00.pinctrl:352, s_twi0 group PL0 <b>TODO</b> WIFI wlan_regon? |
+|1f02c00.pinctrl|353|PL1|1f02400.s_twi 1f02c00.pinctrl:353, s_twi0 group PL1 <b>TODO</b> WIFI bt_rst? |
+|1f02c00.pinctrl|354|PL2|1f02c00.pinctrl:354, USB DC/DC converter output (5V)|
+|1f02c00.pinctrl|355|PL3|1f02c00.pinctrl:355, <V1, KEY> button reset |
+|1f02c00.pinctrl|356|PL4|<b>TODO?! ONLY FOR V2</b>, 1f02c00.pinctrl:356, <V2, KEY> button power (not soldered) |
+|1f02c00.pinctrl|357|PL5| <b>TODO</b> UNKNOWN, It is not recommended to use as it will most likely damage the chip. |
+|1f02c00.pinctrl|358|PL6| <b>TODO</b> UNKNOWN |
+|1f02c00.pinctrl|359|PL7|1f02c00.pinctrl:359, <b>TODO</b> WIFI DC/DC 1.8V? |
+|1f02c00.pinctrl|360|PL8| <b>TODO</b> UNKNOWN, It is not recommended to use as it will most likely damage the chip. |
+|1f02c00.pinctrl|361|PL9| <b>TODO?!</b> Most likely, this is the enabling pin of the DC/DC converter on the DRAM circuit (1.5V). |
+|1f02c00.pinctrl|362|PL10|1f02c00.pinctrl:362, <V1, LED> status_led |
+|1f02c00.pinctrl|363|PL11|1f02000.s_cir, s_cir0 IR |
 
 ### Quick answers to questions:
 
