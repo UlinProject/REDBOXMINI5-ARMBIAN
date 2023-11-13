@@ -71,22 +71,22 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 |1c20800.pinctrl|20|PA20||
 |1c20800.pinctrl|21|PA21||
 |1c20800.pinctrl|64|PC0||
-|1c20800.pinctrl|65|PC1|1c11000.sdmmc,  spi0 group PC1|
+|1c20800.pinctrl|65|PC1|1c11000.sdmmc,  spi0 group PC1 <EMMC>|
 |1c20800.pinctrl|66|PC2||
 |1c20800.pinctrl|67|PC3||
 |1c20800.pinctrl|68|PC4||
-|1c20800.pinctrl|69|PC5|1c11000.sdmmc,  sdc2 group PC5|
-|1c20800.pinctrl|70|PC6|1c11000.sdmmc,  sdc2 group PC6|
+|1c20800.pinctrl|69|PC5|1c11000.sdmmc,  sdc2 group PC5 <EMMC>|
+|1c20800.pinctrl|70|PC6|1c11000.sdmmc,  sdc2 group PC6 <EMMC>|
 |1c20800.pinctrl|71|PC7||
-|1c20800.pinctrl|72|PC8|1c11000.sdmmc,  sdc2 group PC8|
-|1c20800.pinctrl|73|PC9|1c11000.sdmmc,  sdc2 group PC9|
-|1c20800.pinctrl|74|PC10|1c11000.sdmmc,  sdc2 group PC10|
-|1c20800.pinctrl|75|PC11|1c11000.sdmmc,  sdc2 group PC11|
-|1c20800.pinctrl|76|PC12|1c11000.sdmmc,  sdc2 group PC12|
-|1c20800.pinctrl|77|PC13|1c11000.sdmmc,  sdc2 group PC13|
-|1c20800.pinctrl|78|PC14|1c11000.sdmmc,  sdc2 group PC14|
-|1c20800.pinctrl|79|PC15|1c11000.sdmmc,  sdc2 group PC15|
-|1c20800.pinctrl|80|PC16|1c11000.sdmmc,  sdc2 group PC16|
+|1c20800.pinctrl|72|PC8|1c11000.sdmmc,  sdc2 group PC8 <EMMC>|
+|1c20800.pinctrl|73|PC9|1c11000.sdmmc,  sdc2 group PC9 <EMMC>|
+|1c20800.pinctrl|74|PC10|1c11000.sdmmc,  sdc2 group PC10 <EMMC>|
+|1c20800.pinctrl|75|PC11|1c11000.sdmmc,  sdc2 group PC11 <EMMC>|
+|1c20800.pinctrl|76|PC12|1c11000.sdmmc,  sdc2 group PC12 <EMMC>|
+|1c20800.pinctrl|77|PC13|1c11000.sdmmc,  sdc2 group PC13 <EMMC>|
+|1c20800.pinctrl|78|PC14|1c11000.sdmmc,  sdc2 group PC14 <EMMC>|
+|1c20800.pinctrl|79|PC15|1c11000.sdmmc,  sdc2 group PC15 <EMMC>|
+|1c20800.pinctrl|80|PC16|1c11000.sdmmc,  sdc2 group PC16 <EMMC>|
 |1c20800.pinctrl|81|PC17||
 |1c20800.pinctrl|82|PC18||
 |1c20800.pinctrl|96|PD0||
@@ -123,23 +123,23 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 |1c20800.pinctrl|141|PE13||
 |1c20800.pinctrl|142|PE14||
 |1c20800.pinctrl|143|PE15||
-|1c20800.pinctrl|160|PF0|1c0f000.sdmmc, group PF0|
-|1c20800.pinctrl|161|PF1|1c0f000.sdmmc, group PF1|
-|1c20800.pinctrl|162|PF2|1c0f000.sdmmc, group PF2|
-|1c20800.pinctrl|163|PF3|1c0f000.sdmmc, group PF3|
-|1c20800.pinctrl|164|PF4|1c0f000.sdmmc, group PF4|
-|1c20800.pinctrl|165|PF5|1c0f000.sdmmc, group PF5|
-|1c20800.pinctrl|166|PF6|1c20800.pinctrl:166, sdcard0 cd-gpios|
-|1c20800.pinctrl|192|PG0|1c10000.sdmmc,  sdc1 group PG0|
-|1c20800.pinctrl|193|PG1|1c10000.sdmmc,  sdc1 group PG1|
-|1c20800.pinctrl|194|PG2|1c10000.sdmmc,  sdc1 group PG2|
-|1c20800.pinctrl|195|PG3|1c10000.sdmmc,  sdc1 group PG3|
-|1c20800.pinctrl|196|PG4|1c10000.sdmmc,  sdc1 group PG4|
-|1c20800.pinctrl|197|PG5|1c10000.sdmmc,  sdc1 group PG5|
-|1c20800.pinctrl|198|PG6|1c28400.uart,  uart1 group PG6 <DISABLE>|
-|1c20800.pinctrl|199|PG7|1c28400.uart,  uart1 group PG7 <DISABLE>|
-|1c20800.pinctrl|200|PG8|1c28400.uart,  uart1 group PG8 <DISABLE>|
-|1c20800.pinctrl|201|PG9|1c28400.uart,  uart1 group PG9 <DISABLE>|
+|1c20800.pinctrl|160|PF0|1c0f000.sdmmc, group PF0 <SDCARD>|
+|1c20800.pinctrl|161|PF1|1c0f000.sdmmc, group PF1 <SDCARD>|
+|1c20800.pinctrl|162|PF2|1c0f000.sdmmc, group PF2 <SDCARD>|
+|1c20800.pinctrl|163|PF3|1c0f000.sdmmc, group PF3 <SDCARD>|
+|1c20800.pinctrl|164|PF4|1c0f000.sdmmc, group PF4 <SDCARD>|
+|1c20800.pinctrl|165|PF5|1c0f000.sdmmc, group PF5 <SDCARD>|
+|1c20800.pinctrl|166|PF6|1c20800.pinctrl:166, sdcard0 cd-gpios <SDCARD>|
+|1c20800.pinctrl|192|PG0|1c10000.sdmmc,  sdc1 group PG0 <WIFI>|
+|1c20800.pinctrl|193|PG1|1c10000.sdmmc,  sdc1 group PG1 <WIFI>|
+|1c20800.pinctrl|194|PG2|1c10000.sdmmc,  sdc1 group PG2 <WIFI>|
+|1c20800.pinctrl|195|PG3|1c10000.sdmmc,  sdc1 group PG3 <WIFI>|
+|1c20800.pinctrl|196|PG4|1c10000.sdmmc,  sdc1 group PG4 <WIFI>|
+|1c20800.pinctrl|197|PG5|1c10000.sdmmc,  sdc1 group PG5 <WIFI>|
+|1c20800.pinctrl|198|PG6|1c28400.uart,  uart1 group PG6|
+|1c20800.pinctrl|199|PG7|1c28400.uart,  uart1 group PG7|
+|1c20800.pinctrl|200|PG8|1c28400.uart,  uart1 group PG8|
+|1c20800.pinctrl|201|PG9|1c28400.uart,  uart1 group PG9|
 |1c20800.pinctrl|202|PG10|1c22400.daudio,  pcm1 group PG10|
 |1c20800.pinctrl|203|PG11|1c22400.daudio,  pcm1 group PG11|
 |1c20800.pinctrl|204|PG12|1c22400.daudio,  pcm1 group PG12|
@@ -193,3 +193,10 @@ These boxes do not have an adjustable VDD-CPUX regulator (usually this can be im
 #### Will there be WI-FI support?
 
 Not at the moment due to the difficulty of obtaining working and up-to-date driver source code. Also, this chip is not very productive and preference remains for wired eth or usb wifi.
+
+#### I2C support?
+
+Not a single port is working, all i2c buses in the device tree are disabled. I2C0, I2C1, I2C2 are physically blocked.
+
+<i>TODO? In theory you can use pins PL0, PL1, supposedly used for the WIFI chip.</i>
+
