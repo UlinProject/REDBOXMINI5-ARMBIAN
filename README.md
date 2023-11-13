@@ -170,6 +170,19 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 |5.0  |USB     |
 |3.3  |WIFI    |
 
+### UART (DEBUG)
+
+#### V1:
+
+<b>speed:</b> 115200
+<b>ll:</b> 3.3v
+
+<img src="./img/V1_uart.jpg" width="20%"></img>
+
+#### V2:
+
+<b>Just like on V1, the contacts are marked on the board.</b>
+
 
 ### Quick answers to questions:
 
