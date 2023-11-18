@@ -1,7 +1,7 @@
 # REDBOXMINI5-ARMBIAN
 All technical information about the REDBOX MINI 5 device, including the ability to build the Linux ARMBIAN distribution.
 
-<center><img src="./img/V1GRAPHARMBIAN.jpg" width="40%"></img></center>
+<p align="center"><img src="./img/V1GRAPHARMBIAN.jpg" width="40%"></img></p>
 
 <b><i>!!ATTENTION!!</i></b>
 
@@ -41,7 +41,7 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 
 <b>EMMC:</b> (works but not guaranteed)
 
-<b>GPIO:</b> LED1 (1c20800, 15-PA15), LED2 (1f02c00, 362-PL10), KEY_POWER (1f02c00.pinctrl:356, PL4)
+<b>GPIO:</b> LED1 (1c20800, 15-PA15), LED2 (1f02c00, 362-PL10), KEY_POWER (1f02c00.pinctrl:356, PL4)  (On this board you can get absolutely any gpio that is available on allwinner h5 (I’m just giving a list of those pins that you can get without much effort).) (many other pins are probably similar to V1.).
 
 ### GPIO TABLE
 <i>This table is not complete and was written more for version V1.</i>
@@ -158,7 +158,7 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 |1f02c00.pinctrl|362|PL10|1f02c00.pinctrl:362, <b>V1, LED</b> status_led |
 |1f02c00.pinctrl|363|PL11|1f02000.s_cir, s_cir0 IR |
 
-### POWER TABLE
+### POWER TABLE:
 
 <i>This table is not complete and was written more for version V1.</i>
 
@@ -170,16 +170,13 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 |5.0  |USB     |
 |3.3  |WIFI    |
 
-### UART (DEBUG)
+### UART (DEBUG):
 
-#### V1:
-
-<b>speed:</b> 115200
-<b>ll:</b> 3.3v
+#### V1 (115200, 3.3):
 
 <img src="./img/V1_uart.jpg" width="20%"></img>
 
-#### V2:
+#### V2 (115200, 3.3):
 
 <b>Just like on V1, the contacts are marked on the board.</b>
 
