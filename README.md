@@ -23,6 +23,8 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 
 <b>WI-FI:</b> XR819 (was not considered)
 
+<b>USB:</b> x2 2.0, (works, presumably the board has contacts for additional USB.)
+
 <b>EMMC:</b> Q2J55L (7.09 GiB) (works but not guaranteed)
 
 <b>GPIO:</b> LED_PWR (1c20800, 15-PA15), LED_STATUS (1f02c00, 362-PL10), IR (1f02c00, 363-PL11), KEY_RESET (1f02c00, 355-PL3) (On this board you can get absolutely any gpio that is available on allwinner h5 (I’m just giving a list of those pins that you can get without much effort).)
@@ -38,6 +40,8 @@ All technical information about the REDBOX MINI 5 device, including the ability 
 <b>Eth:</b> Internal (100mbit)
 
 <b>WI-FI:</b> XR819 (was not considered)
+
+<b>USB:</b> x2 2.0 (works)
 
 <b>EMMC:</b> (works but not guaranteed)
 
