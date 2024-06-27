@@ -12,9 +12,9 @@
 
 <b><i>Important: Users are solely responsible for making decisions about using this data and for collecting images to run third-party software.</b></i>
 
-### Board versions
+# Board versions
 
-#### * V1
+### * V1
 
 <b><img src="./img/V101.jpg" width="20%"></img><img src="./img/V102.jpg" width="20%"></img></b>
 
@@ -32,7 +32,7 @@
 
 <b>GPIO:</b> LED_PWR (1c20800, 15-PA15), LED_STATUS (1f02c00, 362-PL10), IR (1f02c00, 363-PL11), KEY_RESET (1f02c00, 355-PL3) (On this board you can get absolutely any gpio that is available on allwinner h5 (I’m just giving a list of those pins that you can get without much effort).)
 
-#### * V2
+### * V2
 
 <b><img src="./img/V201.jpg" width="20%"></img><img src="./img/V202.jpg" width="20%"></img></b>
 
@@ -50,7 +50,7 @@
 
 <b>GPIO:</b> LED1 (1c20800, 15-PA15), LED2 (1f02c00, 362-PL10), KEY_POWER (1f02c00.pinctrl:356, PL4)  (On this board you can get absolutely any gpio that is available on allwinner h5 (I’m just giving a list of those pins that you can get without much effort).) (many other pins are probably similar to V1.).
 
-### GPIO TABLE
+# GPIO TABLE
 <i>This table is not complete and was written more for version V1.</i>
 
 |CHIP|NUM|NAME|FUNCTION|
@@ -165,7 +165,7 @@
 |1f02c00.pinctrl|362|PL10|1f02c00.pinctrl:362, <b>V1, LED</b> status_led |
 |1f02c00.pinctrl|363|PL11|1f02000.s_cir, s_cir0 IR |
 
-### POWER TABLE
+# POWER TABLE
 
 <i>This table is not complete and was written more for version V1.</i>
 
@@ -177,7 +177,7 @@
 |5.0  |USB     |
 |3.3  |WIFI    |
 
-### UART (DEBUG)
+# UART (DEBUG)
 
 #### * V1 (115200, 3.3)
 
@@ -188,23 +188,23 @@
 <b>Just like on V1, the contacts are marked on the board.</b>
 
 
+# Quick Answers to Questions
 
-### Quick answers to questions
+#### • Will there be support for 1.2/1.5 GHz processor frequencies?
 
-#### * Will there be support for 1.2/1.5 GHz processor frequencies?
+These devices use a constant 1.1V voltage, which cannot be adjusted. This means that higher processor frequencies like 1.2/1.5 GHz are not achievable. 
 
-These boxes do not have an adjustable VDD-CPUX regulator (usually this can be implemented with either a GPIO transistor or an i2c regulator) and use a constant voltage of 1.1V to operate. This does not improve power savings and does not increase the supply voltage to 1 ,3 V.V in situations where it is necessary. Without a voltage of 1.3V it is impossible to obtain these frequencies.
+#### • Will there be WI-FI support?
 
-#### * Will there be WI-FI support?
+WI-FI support is not currently available due to difficulties in obtaining compatible driver code. The chip itself is not very efficient for wireless communication, so wired connections (Ethernet or USB Wi-Fi) are preferred.
 
-Not at the moment due to the difficulty of obtaining working and up-to-date driver source code. Also, this chip is not very productive and preference remains for wired eth or usb wifi.
+#### • I2C support?
 
-#### * I2C support?
+I2C support is not available, as all I2C buses in the device tree are currently disabled. 
 
-Not a single port is working, all i2c buses in the device tree are disabled. I2C0, I2C1, I2C2 are physically blocked.
+<b>TODO?</b> In theory, you can potentially use pins PL0 and PL1, which are intended for the WI-FI chip, for I2C communication. However, this would require additional configuration and testing. 
 
-<i>TODO? In theory you can use pins PL0, PL1, supposedly used for the WIFI chip.</i>
 
-### License
+# License
 
 All rights reserved.
