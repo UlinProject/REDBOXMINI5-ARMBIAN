@@ -1,0 +1,132 @@
+
+/ {
+	/*
+		aosp:
+		cpufreq_tbl = <***pio(0x3a)980 0x75300 0x9e340 0xafc80 0xc7380 0xdea80 0xf6180 0x10d880 0x119400 1200000>;
+
+		max_freq = <0x365c0400>;
+		min_freq = <0xe4e1c00>;
+		lv_count = <0x08>;
+
+		lv1_freq = <1152000000>;
+		lv1_volt = <1100>;
+		lv2_freq = <1104000000>;
+		lv2_volt = <1100>;
+		lv3_freq = <1008000000>;
+		lv3_volt = <1100>;
+		lv4_freq = <816000000>;
+		lv4_volt = <1100>;
+		lv5_freq = "%1|";
+		lv5_volt = <1100>;
+		lv6_freq = <0x00>;
+		lv6_volt = <1100>;
+		lv7_freq = <0x00>;
+		lv7_volt = <1100>;
+		lv8_freq = <0x00>;
+		lv8_volt = <1100>;
+	*/
+
+	/delete-node/ opp-table-cpu;
+	cpu_opp_table: opp-table-cpu {
+		opp-408000000 {
+			opp-hz = /bits/ 64 <408000000>;
+			opp-microvolt = <1000000 1000000 1310000>;
+			clock-latency-ns = <244144>; /* 8 32k periods */
+		};
+
+		opp-648000000 {
+			opp-hz = /bits/ 64 <648000000>;
+			opp-microvolt = <1040000 1040000 1310000>;
+			clock-latency-ns = <244144>; /* 8 32k periods */
+		};
+
+		opp-792000000 {
+			opp-hz = /bits/ 64 <792000000>;
+			opp-microvolt = <1080000 1080000 1310000>;
+			clock-latency-ns = <244144>; /* 8 32k periods */
+		};
+
+		opp-816000000 {
+			opp-hz = /bits/ 64 <816000000>;
+			opp-microvolt = <1080000 1080000 1310000>;
+			clock-latency-ns = <244144>; /* 8 32k periods */
+		};
+
+		opp-864000000 {
+			opp-hz = /bits/ 64 <864000000>;
+			opp-microvolt = <1120000	1120000 1310000>;
+			clock-latency-ns = <244144>; /* 8 32k periods */
+		};
+
+		opp-912000000 {
+			opp-hz = /bits/ 64 <912000000>;
+			opp-microvolt = <1120000	1120000 1310000>;
+			clock-latency-ns = <244144>; /* 8 32k periods */
+		};
+
+		opp-936000000 {
+			opp-hz = /bits/ 64 <936000000>;
+			opp-microvolt = <1160000 1160000 1310000>;
+			clock-latency-ns = <244144>; /* 8 32k periods */
+		};
+
+		opp-960000000 {
+			opp-hz = /bits/ 64 <960000000>;
+			opp-microvolt = <1160000 1160000 1310000>;
+			clock-latency-ns = <244144>; /* 8 32k periods */
+		};
+
+		opp-1008000000 {
+			opp-hz = /bits/ 64 <1008000000>;
+			opp-microvolt = <1200000 1200000 1310000>;
+			clock-latency-ns = <244144>; /* 8 32k periods */
+		};
+
+		opp-1056000000 {
+			opp-hz = /bits/ 64 <1056000000>;
+			opp-microvolt = <1240000 1240000 1310000>;
+			clock-latency-ns = <244144>; /* 8 32k periods */
+		};
+		
+		opp-1080000000 {
+			opp-hz = /bits/ 64 <1080000000>;
+			opp-microvolt = <1240000	1240000 1310000>;
+			clock-latency-ns = <244144>; /* 8 32k periods */
+		};
+
+		opp-1104000000 {
+			opp-hz = /bits/ 64 <1104000000>;
+			opp-microvolt = <1260000	1260000 1310000>;
+			clock-latency-ns = <244144>; /* 8 32k periods */
+		};
+
+		opp-1152000000 {
+			opp-hz = /bits/ 64 <1152000000>;
+			opp-microvolt = <1300000	1300000 1310000>;
+			clock-latency-ns = <244144>; /* 8 32k periods */
+		};
+
+		 opp-1200000000 {
+                        opp-hz = /bits/ 64 <1200000000>;
+                        opp-microvolt = <1320000 1320000 1320000 >;
+                        clock-latency-ns = <244144>; /* 8 32k periods */
+                };
+	};
+};
+
+&cpu0 {
+	operating-points-v2 = <&cpu_opp_table>;
+};
+
+&cpu1 {
+	operating-points-v2 = <&cpu_opp_table>;
+};
+
+&cpu2 {
+	operating-points-v2 = <&cpu_opp_table>;
+};
+
+&cpu3 {
+	operating-points-v2 = <&cpu_opp_table>;
+};
+

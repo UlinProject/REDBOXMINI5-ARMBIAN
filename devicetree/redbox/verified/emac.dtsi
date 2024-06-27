@@ -1,0 +1,17 @@
+
+/ {
+	aliases {
+		ethernet0 = &emac;
+	};
+};
+
+&emac {
+	phy-handle = <&int_mii_phy>;
+	phy-mode = "mii";
+	allwinner,leds-active-low;
+	status = "okay";
+
+	phy-supply = <&reg_gmac_3v3>;
+	clock-names = "stmmaceth";
+};
+

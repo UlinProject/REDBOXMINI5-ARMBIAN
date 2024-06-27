@@ -1,0 +1,25 @@
+
+/* GOOD */
+
+/ {
+	/delete-node/ vcc-usb;
+	reg_vcc_usb: vcc-usb { /* GOOD */
+		compatible = "regulator-fixed";
+		regulator-name = "vcc-usb";
+		regulator-min-microvolt = <5000000>;
+		regulator-max-microvolt = <5000000>;
+
+		// aosp: ***r_pio(0x9d) 11 2 1 0 0xffffffff 0x00
+		gpio = <&r_pio 0 2 GPIO_ACTIVE_HIGH>; // PL2 226 GOOD Checked Manually
+		enable-active-high;
+	};
+};
+
+&usbphy {
+	usb0_vbus-supply = <&reg_vcc_usb>;
+	usb1_vbus-supply = <&reg_vcc_usb>;
+	usb2_vbus-supply = <&reg_vcc_usb>;
+	usb3_vbus-supply = <&reg_vcc_usb>;
+	status = "okay";
+};
+

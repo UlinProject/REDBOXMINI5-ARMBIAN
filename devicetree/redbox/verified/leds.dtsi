@@ -1,0 +1,48 @@
+
+/ {
+	/*
+		aosp: gpio_para {
+			device_type = "gpio_para";
+			compatible = "allwinner,sunxi-init-gpio";
+			gpio_used = <0x01>;
+			gpio_num = <0x03>;
+			gpio_pin_1 = <***r_pio(0x9d) 0x0b 10 0x01 0xffffffff 0xffffffff 0x01>; END
+			gpio_pin_2 = <***pio(0x3a) 0x00 15 0x01 0xffffffff 0xffffffff 0x00>;  END
+			gpio_pin_3 = <***pio(0x3a) 0x00 13 0x01 0xffffffff 0xffffffff 0x01>; PSEUDO END
+			normal_led = "gpio_pin_1";
+			standby_led = "gpio_pin_2";
+			network_led = "gpio_pin_3";
+			easy_light_used = <0x01>;
+			normal_led_light = <0x01>;
+			standby_led_light = <0x01>;
+			network_led_light = <0x00>;
+		};
+	*/
+
+	/delete-node/ leds;
+	leds {
+		compatible = "gpio-leds";
+
+		standby_led: pwr_led { /* GOOD */
+			label = "redbox:red:pwr";
+			/* aosp:***pio(0x3a) 0x00 15 0x01 0xffffffff 0xffffffff 0x00, PA15*/
+			gpios = <&pio 0 15 GPIO_ACTIVE_HIGH>;
+			default-state = "on";
+			linux,default-trigger = "default-on";
+		};
+
+		normal_led: status_led { /* GOOD */
+			label = "redbox:blue:status";
+			/* aosp:***r_pio(0x9d) 11 10 0x01 0xffffffff 0xffffffff 0x01, PL10 */
+			gpios = <&r_pio 0 10 GPIO_ACTIVE_HIGH>;
+			linux,default-trigger = "mmc0";
+		};
+
+		/*network_led { UNK
+			label = "redbox:unk:network";
+			// aosp: ***pio(0x3a) 0x00 13 0x01 0xffffffff 0xffffffff 0x01
+			gpios = <&pio 0 13 GPIO_ACTIVE_LOW>;
+		};*/
+	};
+};
+

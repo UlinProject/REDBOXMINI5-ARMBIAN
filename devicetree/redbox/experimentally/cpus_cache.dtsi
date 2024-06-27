@@ -1,0 +1,59 @@
+
+/* FIX cacheinfo: Unable to detect cache hierarchy for CPU 0 */
+
+/ {
+	cpus {
+		cpu0: cpu@0 {
+			d-cache-size = <32768>;
+			d-cache-line-size = <64>;
+			// d-cache-sets = <128>; // 32KiB(size)/64(line-size)=512ways/2-way set TODO, VALID?
+
+			i-cache-size = <32768>;
+			i-cache-line-size = <64>;
+			// i-cache-sets = <256>; // 48KiB(size)/64(line-size)=768ways/4-way set TODO, VALID?
+
+			next-level-cache = <&l2>;
+		};
+		cpu1: cpu@1 { /*lscpu */
+			d-cache-size = <32768>;
+			d-cache-line-size = <64>;
+			// d-cache-sets = <128>; // 32KiB(size)/64(line-size)=512ways/2-way set TODO, VALID?
+
+			i-cache-size = <32768>;
+			i-cache-line-size = <64>;
+			// i-cache-sets = <256>; // 48KiB(size)/64(line-size)=768ways/4-way set TODO, VALID?
+
+			next-level-cache = <&l2>;
+		};
+		cpu2: cpu@2 {
+			d-cache-size = <32768>;
+			d-cache-line-size = <64>;
+			// d-cache-sets = <128>; // 32KiB(size)/64(line-size)=512ways/2-way set TODO, VALID?
+
+			i-cache-size = <32768>;
+			i-cache-line-size = <64>;
+			// i-cache-sets = <256>; // 48KiB(size)/64(line-size)=768ways/4-way set TODO, VALID?
+
+			next-level-cache = <&l2>;
+		};
+		cpu3: cpu@3 {
+			d-cache-size = <32768>;
+			d-cache-line-size = <64>;
+			// d-cache-sets = <128>; // 32KiB(size)/64(line-size)=512ways/2-way set TODO, VALID?
+
+			i-cache-size = <32768>;
+			i-cache-line-size = <64>;
+			// i-cache-sets = <256>; // 48KiB(size)/64(line-size)=768ways/4-way set TODO, VALID?
+
+			next-level-cache = <&l2>;
+		};
+		l2: l2-cache0 { /* GOOD */
+			compatible = "cache";
+			cache-unified;
+			cache-size = <524288>;
+			cache-line-size = <64>;
+			cache-sets = <512>; // 1MiB (1 048 576)  (size)/64(line-size)=16384ways/16-way set /* GOOD */
+			cache-level = <2>;
+		};
+	};
+};

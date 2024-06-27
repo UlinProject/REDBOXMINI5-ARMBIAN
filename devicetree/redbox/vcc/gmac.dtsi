@@ -1,0 +1,14 @@
+
+/ {
+	/delete-node/ gmac-3v3;
+	reg_gmac_3v3: gmac-3v3 {
+		compatible = "regulator-fixed";
+		regulator-name = "gmac-3v3";
+		regulator-min-microvolt = <3300000>;
+		regulator-max-microvolt = <3300000>;
+		startup-delay-us = <5000>;
+		enable-active-high;
+		vin-supply = <&reg_vcc5v0>;
+	};
+};
+

@@ -1,0 +1,58 @@
+// #UlinProject23
+
+/dts-v1/;
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/input/input.h>
+
+#include "sun50i-h5.dtsi"
+
+#include <redbox/vcc/def.dtsi>
+#include <redbox/vcc/cpu.dtsi>
+#include <redbox/vcc/io.dtsi>
+#include <redbox/vcc/dram.dtsi>
+#include <redbox/vcc/usb.dtsi>
+#include <redbox/vcc/gmac.dtsi>
+#include <redbox/vcc/1v2.dtsi>
+
+#include <redbox/mmc/sdcard.dtsi>
+#include <redbox/mmc/emmc.dtsi>
+
+#include <redbox/pins.dtsi>
+#include <redbox/verified/leds.dtsi>
+#include <redbox/keys.dtsi>
+//#include <redbox/experimentally/cpus_cache.dtsi>
+#include <redbox/normal/cpus_opp.dtsi>
+//#include <redbox/experimentally/cpus_idlestates.dtsi>
+#include <redbox/normal/usb.dtsi>
+//#include <redbox/normal/vcc_deviceio.dtsi>
+#include <redbox/patch/dram_controller.dtsi>
+#include <redbox/normal/rtc.dtsi>
+#include <redbox/verified/i2c.dtsi>
+#include <redbox/normal/cpu_thermal.dtsi>
+#include <redbox/normal/gpu.dtsi>
+#include <redbox/verified/uart.dtsi>
+#include <redbox/normal/hdmi.dtsi>
+#include <redbox/verified/emac.dtsi>
+#include <redbox/mmc.dtsi>
+#include <redbox/ir.dtsi>
+#include <redbox/codec.dtsi>
+
+//#include <redbox/vdd_gpu.dtsi>
+//#include <redbox/vcc_ctp.dtsi>
+
+/ {
+	model = "RedBox Mini 5, H5, UlinProject";
+	compatible = "redbox,m-h5", "allwinner,sun50i-h5";
+
+	aliases {
+
+	};
+};
+
+&de {
+	status = "okay";
+};
+
+
+
+

@@ -1,0 +1,129 @@
+
+/* GOOD */
+
+/*	aosp:
+	polling-delay-passive = <0x3e8>;
+	polling-delay = <0x2710>;
+	thermal-sensors = <0x8a 0x00>;
+
+	trips {
+
+		t0 {
+			temperature = <0x5a>;
+			type = "passive";
+			hysteresis = <0x00>;
+			linux,phandle = <0x8b>;
+			phandle = <0x8b>;
+		};
+
+		t1 {
+			temperature = <0x64>;
+			type = "passive";
+			hysteresis = <0x00>;
+			linux,phandle = <0x8d>;
+			phandle = <0x8d>;
+		};
+
+		t2 {
+			temperature = <0x6e>;
+			type = "passive";
+			hysteresis = <0x00>;
+			linux,phandle = <0x8e>;
+			phandle = <0x8e>;
+		};
+
+		t3 {
+			temperature = <0x50>;
+			type = "passive";
+			hysteresis = <0x00>;
+			linux,phandle = <0x8f>;
+			phandle = <0x8f>;
+		};
+
+		t4 {
+			temperature = <0x5a>; 90
+			type = "passive";
+			hysteresis = <0x00>;
+			linux,phandle = <0x91>;
+			phandle = <0x91>;
+		};
+
+		t5 {
+			temperature = <0x64>; 100 GOOD
+			type = "passive";
+			hysteresis = <0x00>;
+			linux,phandle = <0x92>;
+			phandle = <0x92>;
+		};
+
+		t6 {
+			temperature = <0x73>; 115???
+			type = "critical";
+			hysteresis = <0x00>;
+		};
+	};
+*/
+
+/ {
+	/delete-node/ thermal-zones;
+	thermal-zones {
+		cpu_thermal: cpu_thermal {
+			thermal-sensors = <&ths 0>;
+
+			polling-delay-passive = <1000>;
+			polling-delay = <10000>;
+
+			trips {
+				cpu_hot_trip: cpu-hot {
+					/* temperature = <90000>; !aosp VERSION! */
+					temperature = <80000>;
+					hysteresis = <2000>; /*aosp -0, OFF-2000?*/
+					type = "passive";
+				};
+
+				cpu_very_hot_trip: cpu-very-hot {
+					/* temperature = <100000>; !aosp VERSION, AND OFF! */
+					temperature = <95000>;
+					hysteresis = <0>;
+					type = "critical";
+				};
+			};
+
+			cooling-maps {
+				cpu-hot-limit {
+					trip = <&cpu_hot_trip>;
+					cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
+							 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
+							 <&cpu2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
+							 <&cpu3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
+				};
+			};
+		};
+
+		gpu_thermal: gpu-thermal {
+			thermal-sensors = <&ths 1>;
+
+			polling-delay-passive = <1000>;
+			polling-delay = <10000>;
+
+			trips { /*Not at all necessary*/
+				gpu_hot_trip: gpu-hot {
+					/* temperature = <90000>; !aosp VERSION! */
+					temperature = <80000>;
+					hysteresis = <2000>; /*aosp -0, OFF-2000?*/
+					type = "passive";
+				};
+
+				gpu_very_hot_trip: gpu-very-hot {
+					/* temperature = <100000>; !aosp VERSION, AND OFF! */
+					temperature = <95000>;
+					hysteresis = <0>;
+					type = "critical";
+				};
+			};
+		};
+	};
+};
+
+
+

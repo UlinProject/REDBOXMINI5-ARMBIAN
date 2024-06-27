@@ -1,0 +1,15 @@
+
+/ {
+	/delete-node/ vcc1v2;
+	reg_vcc1v2: vcc1v2 {
+		compatible = "regulator-fixed";
+		regulator-name = "vcc1v2";
+		regulator-min-microvolt = <1200000>;
+		regulator-max-microvolt = <1200000>;
+		regulator-always-on;
+		regulator-boot-on;
+		vin-supply = <&reg_vcc5v0>;
+		enable-active-high;
+	};
+};
+

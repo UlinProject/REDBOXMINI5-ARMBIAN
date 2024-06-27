@@ -1,0 +1,29 @@
+
+/ {
+	/delete-node/ gpio-keys;
+	gpio-keys {
+		compatible = "gpio-keys";
+
+		key-power { /* GOOD */
+			label = "power";
+			linux,code = <KEY_RESTART>;
+			// aosp: ***r_pio(0x9d) 11 3 0x00 0xffffffff 0xffffffff 0x00
+			gpios = <&r_pio 0 3 GPIO_ACTIVE_LOW>; /* PL3 */
+		};
+
+		/*
+			aosp:recovery_para {
+				device_type = "recovery_para";
+				status = "okay";
+				mode = <0x01>;
+				recovery_key = <***r_pio(0x9d) 11 4 0x00 0xffffffff 0xffffffff 0xffffffff>; END
+			};
+		*/
+		/*key-restart { does not work
+			label = "restart";
+			linux,code = <KEY_RESTART>;
+			// aosp: ***r_pio(0x9d) 11 4 0x00 0xffffffff 0xffffffff 0xffffffff PL4
+			gpios = <&r_pio 0 4 GPIO_ACTIVE_LOW>;
+		};*/
+	};
+};

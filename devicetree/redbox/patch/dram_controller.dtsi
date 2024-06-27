@@ -1,0 +1,41 @@
+
+/* GOOD */
+
+/* 
+	FIX [   10.235856] sun8i-mbus 1c62000.dram-controller: error -ENOENT: failed to get apb clock
+	FIX [   10.243891] sun8i-mbus: probe of 1c62000.dram-controller failed with error -2
+*/
+
+/*
+	1c62000.dram-controller
+        336.00 GHz        0.0%
+        448.00 GHz       94.6%
+        672.00 GHz        0.0%
+        1344.01 GHz       5.4% <<??? Original firmware never works above 672Ghz, fix it?
+        Idle              0.0%
+*/
+
+/ {
+	soc {
+		mbus: dram-controller@1c62000 {
+			compatible = "allwinner,sun50i-h5-mbus";
+
+			/* aosp:reg = <0x00 0x1c62000 0x00 0x1000 0x00 0x1c63000 0x00 0x1000 0x00 0x1c20000 0x00 0x800>; */ /* GOOD!!! */
+			/*reg = <0x01c62000 0x1000>,
+			      <0x01c63000 0x1000>;*/
+			reg = <0x01c62000 0x1000>,
+			      <0x01c63000 0x1000>,
+			      <0x1c20000 0x800>;
+			
+			reg-names = "mbus", "dram";
+			/* aosp:clocks = <0x98 0x04 0x99>; */ /* ???? */
+			/*  GOOD clocks = <0x03 0x1a 0x03 0x60 0x03 0x71>; */
+			clocks =  <&ccu CLK_BUS_DRAM>,
+				<&ccu CLK_MBUS>,
+				 <&ccu CLK_DRAM>,
+				 <&ccu CLK_BUS_DRAM>;
+			clock-names = "apb", "mbus", "dram", "bus";
+		};
+	};
+};
+

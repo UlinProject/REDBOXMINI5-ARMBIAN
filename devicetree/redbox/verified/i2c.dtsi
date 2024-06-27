@@ -1,0 +1,73 @@
+
+// not working
+
+/*
+	aosp: twi@0x01c2ac00 {
+		#address-cells = <0x01>;
+		#size-cells = <0x00>;
+		compatible = "allwinner,sun50i-twi";
+		device_type = "twi0";
+		reg = <0x00 0x1c2ac00 0x00 0x400>;
+		interrupts = <0x00 0x06 0x04>;
+		clocks = <0x23>;
+		clock-frequency = <400000>;
+		pinctrl-names = "default\0sleep";
+		status = "disabled";
+		pinctrl-0 = <0xa4>;
+		pinctrl-1 = <0xa5>;
+	};
+
+	current: I2C bus locked, block: 1, time_left: 0
+*/
+&i2c0 {
+	status = "disabled"; 
+	clock-frequency = <400000>;
+};
+
+
+/*
+	aosp: twi@0x01c2b000 {
+		#address-cells = <0x01>;
+		#size-cells = <0x00>;
+		compatible = "allwinner,sun50i-twi";
+		device_type = "twi1";
+		reg = <0x00 0x1c2b000 0x00 0x400>;
+		interrupts = <0x00 0x07 0x04>;
+		clocks = <0x26>;
+		clock-frequency = <0x30d40>;
+		pinctrl-names = "default\0sleep";
+		status = "okay"; <<<
+		pinctrl-0 = <0xa6>;
+		pinctrl-1 = <0xa7>;
+	};
+
+	I2C bus locked, block: 1, time_left: 0 <<
+*/
+&i2c1 {
+	status = "disabled"; /* I2C bus locked, */
+	clock-frequency = <200000>;
+};
+
+/*
+	aosp: twi@0x01c2b400 {
+		#address-cells = <0x01>;
+		#size-cells = <0x00>;
+		compatible = "allwinner,sun50i-twi";
+		device_type = "twi2";
+		reg = <0x00 0x1c2b400 0x00 0x400>;
+		interrupts = <0x00 0x08 0x04>;
+		clocks = <0x29>;
+		clock-frequency = <0x30d40>;
+		pinctrl-names = "default\0sleep";
+		status = "disabled";
+		pinctrl-0 = <0xa8>;
+		pinctrl-1 = <0xa9>;
+	};
+
+	I2C bus locked, block: 1, time_left: 0 <<
+*/
+&i2c2 {
+	status = "disabled";
+	clock-frequency = <200000>;
+};
+

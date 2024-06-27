@@ -1,0 +1,14 @@
+
+/ {
+	/delete-node/ vcc-io;
+	reg_vcc_io: vcc-io {
+		compatible = "regulator-fixed";
+		regulator-name = "vcc-io";
+		regulator-min-microvolt = <3300000>;
+		regulator-max-microvolt = <3300000>;
+		regulator-always-on;
+		regulator-boot-on;
+		vin-supply = <&reg_vcc3v3>;
+	};
+};
+

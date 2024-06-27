@@ -1,0 +1,18 @@
+
+/* GOOD */
+
+/ {
+	/delete-node/ vcc-dram;
+	reg_vcc_dram: vcc-dram {
+		compatible = "regulator-fixed";
+		regulator-name = "vcc-dram";
+		regulator-min-microvolt = <1500000>;
+		regulator-max-microvolt = <1500000>;
+		regulator-always-on;
+		regulator-boot-on;
+		vin-supply = <&reg_vcc5v0>;
+		gpio = <&r_pio 0 9 GPIO_ACTIVE_HIGH>; // PL9 GOOD Clarified Experimentally
+		enable-active-high;
+	};
+};
+

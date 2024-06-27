@@ -1,0 +1,16 @@
+
+/*
+	r_ir_rx_pin: r-ir-rx-pin {
+		pins = "PL11";
+		function = "s_cir_rx";
+	};
+
+	pin 363 (PL11): 1f02000.s_cir (GPIO UNCLAIMED) function s_cir0 group PL11			[real IR]
+*/
+
+&ir {
+	pinctrl-names = "default";
+	pinctrl-0 = <&r_ir_rx_pin>;
+	status = "okay";
+};
+

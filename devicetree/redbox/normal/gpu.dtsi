@@ -1,0 +1,73 @@
+
+/*
+	aosp: gpu@0x01E80000 {
+		compatible = "arm,mali-450\0arm,mali-utgard";
+		reg = <0x00 0x1e80000 0x00 0x30000>;
+		interrupts = <0x00 0x60 0x04 0x00 0x61 0x04 0x00 0x63 0x04 0x00 0x64 0x04 0x00 0x65 0x04 0x00 0x66 0x04 0x00 0x67 0x04 0x00 0x68 0x04 0x00 0x69 0x04 0x00 0x6a 0x04 0x00 0x6b 0x04>;
+		interrupt-names = "IRQGP\0IRQGPMMU\0IRQPP\0IRQPP0\0IRQPPMMU0\0IRQPP1\0IRQPPMMU1\0IRQPP2\0IRQPPMMU2\0IRQPP3\0IRQPPMMU3";
+		clocks = <0x9a 0x9b>;
+		device_type = "gpu_mali450_0";
+		regulator_id = "vdd-gpu";
+		dvfs_status = <0x00>;
+		temp_ctrl_status = <1>;
+		scene_ctrl_status = <1>;
+		max_level = <3>;
+		begin_level = <0x03>;
+
+		lv0_freq = <144>;
+		lv0_volt = <1200>;
+		lv1_freq = <264>;
+		lv1_volt = <1200>;
+		lv2_freq = <384>;
+		lv2_volt = <1200>;
+		lv3_freq = <456>;
+		lv3_volt = <1200>;
+	};
+*/
+
+/*
+	1e80000.gpu
+        144.00 GHz        0.0%
+        250.00 GHz        0.0%
+        285.72 GHz        0.0%
+        400.00 GHz        0.0%
+        Idle            100.0%
+*/
+
+/ {
+	gpu_opp_table: opp-table-gpu {
+		compatible = "operating-points-v2";
+
+		opp-144000000 {
+			opp-hz = /bits/ 64 <144000000>;
+			opp-microvolt = <1200000>;
+		};
+		opp-264000000 {
+			opp-hz = /bits/ 64 <250000000>;
+			opp-microvolt = <1200000>;
+		};
+		opp-384714285 {
+			opp-hz = /bits/ 64 <285714285>;
+			opp-microvolt = <1200000>;
+		};
+		opp-456000000 {
+			opp-hz = /bits/ 64 <400000000>;
+			opp-microvolt = <1200000>;
+		};
+	};
+	
+	reg_vdd_gpu: vdd-gpu {
+		compatible = "regulator-fixed";
+		regulator-name = "vdd-gpu";
+		regulator-min-microvolt = <1200000>;
+		regulator-max-microvolt = <1200000>;
+	};
+};
+
+&mali { /* 1e80000 */
+	operating-points-v2 = <&gpu_opp_table>;
+	vdd_g3d-supply = <&reg_vdd_gpu>; /* TODO dev_pm_opp_set_regulators: no regulator (mali) found: -19 */
+	vin-supply = <&reg_vdd_gpu>; /* TODO dev_pm_opp_set_regulators: no regulator (mali) found: -19 */
+	status = "okay";
+};
+

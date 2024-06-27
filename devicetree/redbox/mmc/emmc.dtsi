@@ -1,0 +1,75 @@
+
+/*
+	[    1.316766] sunxi-mmc 1c10000.mmc: initialized, max. request size: 16384 KB, uses new timings mode
+	[    3.283704] sunxi-mmc 1c0f000.mmc: Got CD GPIO
+	[    3.307189] sunxi-mmc 1c11000.mmc: initialized, max. request size: 2048 KB
+	[    3.307552] sunxi-mmc 1c0f000.mmc: initialized, max. request size: 16384 KB, uses new timings mode
+
+	EMMC
+	[    3.446697] mmc2: new high speed MMC card at address 0001
+	[    3.448127] mmcblk2: mmc2:0001 Q2J55L 7.09 GiB 
+	[    3.452292] mmcblk2boot0: mmc2:0001 Q2J55L 16.0 MiB 
+	[    3.456089] mmcblk2boot1: mmc2:0001 Q2J55L 16.0 MiB 
+
+*/
+
+/ {
+	aliases {
+		emmc0 = &mmc1;
+	};
+};
+
+// MMC2
+
+/*
+	aosp: sdmmc@01C11000 {
+		compatible = "allwinner,sunxi-mmc-v4p5x";
+		device_type = "sdc2";
+		reg = <0x00 0x1c11000 0x00 0x1000>;
+		interrupts = <0x00 0x3e 0x104>;
+		clocks = <0x06 0x53 0x54 0x55 0x56>;
+		clock-names = "osc24m\0pll_periph\0mmc\0ahb\0rst";
+		pinctrl-names = "default\0sleep";
+		pinctrl-1 = <0x58>;
+		bus-width = <0x08>;
+		max-frequency = <0x2faf080>;
+		sdc_tm4_sm0_freq0 = <0x00>;
+		sdc_tm4_sm0_freq1 = <0x00>;
+		sdc_tm4_sm1_freq0 = <0x00>;
+		sdc_tm4_sm1_freq1 = <0x00>;
+		sdc_tm4_sm2_freq0 = <0x00>;
+		sdc_tm4_sm2_freq1 = <0x00>;
+		sdc_tm4_sm3_freq0 = <0x5000000>;
+		sdc_tm4_sm3_freq1 = <0x405>;
+		sdc_tm4_sm4_freq0 = <0x50000>;
+		sdc_tm4_sm4_freq1 = <0x408>;
+		status = "okay";
+		non-removable;
+		pinctrl-0 = <0xc7>;
+		cd-gpios;
+		sunxi-power-save-mode;
+		sunxi-dis-signal-vol-sw;
+		vmmc = "vcc-emmcv";
+		vqmmc = "vcc-emmcvq18";
+		vdmmc = "none";
+	};
+*/
+
+
+&mmc2 { // emmc0 emmc0 1c11000 
+	compatible = "allwinner,sun50i-h5-mmc",
+		     "allwinner,sun50i-a64-mmc";
+	clocks = <&ccu CLK_BUS_MMC2>, <&ccu CLK_MMC2>;
+	clock-names = "ahb", "mmc";
+	non-removable;
+	
+	bus-width = <8>;
+	max-frequency = <50000000>;
+	pinctrl-names = "default";
+	pinctrl-0 = <&mmc2_8bit_pins>;
+	status = "okay";
+	vmmc-supply = <&reg_vcc3v3>;
+
+	mmc-ddr-3_3v;
+};
+

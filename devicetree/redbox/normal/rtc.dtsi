@@ -1,0 +1,38 @@
+
+/*
+	[    1.296716] sun6i-rtc 1f00000.rtc: registered as rtc0
+	[    1.296738] sun6i-rtc 1f00000.rtc: hctosys: unable to read the hardware clock << Because of late initialization it gets out.
+	[    1.296856] sun6i-rtc 1f00000.rtc: RTC enabled
+*/
+
+/ {
+	soc {
+		
+		/*
+			aosp: rtc@01f00000 {
+				compatible = "allwinner,sun50i-rtc";
+				device_type = "rtc";
+				reg = <0x00 0x1f00000 0x00 0x218>;
+				interrupts = <0x00 0x28 0x04>;
+				gpr_offset = <256>;
+				gpr_len = <4>;
+			};
+		*/
+		/delete-node/ rtc;
+		rtc: rtc@1f00000 {
+			compatible = "allwinner,sun50i-h5-rtc";
+
+			reg = <0x01f00000 0x400>; /* 0x218?? */
+			interrupt-parent = <&r_intc>;
+			interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>;
+			clock-output-names = "osc32k", "osc32k-out", "iosc";
+			clocks = <&osc32k>;
+			#clock-cells = <1>;
+
+			gpr_offset = <256>; /* ?? */
+			gpr_len = <4>; /* ?? */
+		};
+	};
+};
+

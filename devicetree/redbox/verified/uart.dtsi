@@ -1,0 +1,43 @@
+
+/*
+	pin 4 (PA4): 1c28000.uart (GPIO UNCLAIMED) function uart0 group PA4
+	pin 5 (PA5): 1c28000.uart (GPIO UNCLAIMED) function uart0 group PA5
+
+	uart0_pa_pins: uart0-pa-pins { GOOD
+		pins = "PA4", "PA5";
+		function = "uart0";
+	};
+
+	pin 198 (PG6): 1c28400.uart (GPIO UNCLAIMED) function uart1 group PG6 ?????<<
+	pin 199 (PG7): 1c28400.uart (GPIO UNCLAIMED) function uart1 group PG7 ?????<<
+	pin 200 (PG8): 1c28400.uart (GPIO UNCLAIMED) function uart1 group PG8 ?????<<
+	pin 201 (PG9): 1c28400.uart (GPIO UNCLAIMED) function uart1 group PG9 ?????<<
+*/
+
+/ {
+	aliases {
+		serial0 = &uart0;
+	};
+
+	chosen {
+		stdout-path = "serial0:115200n8";
+	};
+};
+
+&uart0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&uart0_pa_pins>;
+	status = "okay";
+};
+
+&uart1 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&uart1_pins>;
+	status = "disabled";
+};
+
+&uart2 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&uart2_pins>;
+	status = "disabled";
+};

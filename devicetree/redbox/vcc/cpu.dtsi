@@ -1,0 +1,48 @@
+
+/*
+	1.2v stable cpufreq stats: 408 MHz:90.52%, 648 MHz:0.25%, 792 MHz:0.06%, 816 MHz:0.04%, 864 MHz:0.05%, 912 MHz:0.02%, 936 MHz:0.04%, 960 MHz:0.04%, 1.01 GHz:8.98%  (92)
+	1.141000 real cpufreq stats: 408 MHz:18.92%, 648 MHz:2.72%, 792 MHz:1.87%, 816 MHz:1.21%, 864 MHz:1.69%, 912 MHz:73.58%  (119)
+
+*/
+
+/ {
+	/delete-node/ vdd-cpux;
+	reg_vdd_cpux: vdd-cpux {
+		compatible = "regulator-fixed";
+		regulator-name = "vdd-cpux";
+		regulator-min-microvolt = <1200000>;  /*real 1141000*/ /* 1200000 normal stable */
+		regulator-max-microvolt = <1200000>; 
+	};
+
+	cpus {
+		cpu0: cpu@0 {
+			cpu-supply = <&reg_vdd_cpux>;
+		};
+		cpu1: cpu@1 { /*lscpu */
+			cpu-supply = <&reg_vdd_cpux>;
+		};
+		cpu2: cpu@2 {
+			cpu-supply = <&reg_vdd_cpux>;
+		};
+		cpu3: cpu@3 {
+			cpu-supply = <&reg_vdd_cpux>;
+		};
+	};
+};
+
+&cpu0 {
+	cpu-supply = <&reg_vdd_cpux>;
+};
+
+&cpu1 {
+	cpu-supply = <&reg_vdd_cpux>;
+};
+
+&cpu2 {
+	cpu-supply = <&reg_vdd_cpux>;
+};
+
+&cpu3 {
+	cpu-supply = <&reg_vdd_cpux>;
+};
+

@@ -1,0 +1,64 @@
+
+/*
+	[    1.316766] sunxi-mmc 1c10000.mmc: initialized, max. request size: 16384 KB, uses new timings mode
+	[    3.283704] sunxi-mmc 1c0f000.mmc: Got CD GPIO
+	[    3.307189] sunxi-mmc 1c11000.mmc: initialized, max. request size: 2048 KB
+	[    3.307552] sunxi-mmc 1c0f000.mmc: initialized, max. request size: 16384 KB, uses new timings mode
+
+	SDCARD
+	[    3.356407] mmc1: host does not support reading read-only switch, assuming write-enable
+	[    3.360137] mmc1: new high speed SDHC card at address 0002
+	[    3.361391] mmcblk1: mmc1:0002 00000 3.70 GiB 
+	[    3.364727]  mmcblk1: p1
+
+*/
+
+/ {
+	aliases {
+		sdcard0 = &mmc0;
+	};
+};
+
+// MMC0
+
+/*
+	aosp: sdmmc@01c0f000 {
+		compatible = "allwinner,sunxi-mmc-v4p1x";
+		device_type = "sdc0";
+		reg = <0x00 0x1c0f000 0x00 0x1000>;
+		interrupts = <0x00 0x3c 0x104>;
+		clocks = <0x06 0x53 0x59 0x5a 0x5b>;
+		clock-names = "osc24m\0pll_periph\0mmc\0ahb\0rst";
+		pinctrl-names = "default\0sleep";
+		pinctrl-1 = <0x5d>;
+		max-frequency = <0x2faf080>;
+		bus-width = <0x04>;
+		status = "okay";
+		pinctrl-0 = <0xc5>;
+		cd-gpios = <***pio(0x3a) 0x05 0x06 0x00 0x01 0x02 0xffffffff>
+		sunxi-power-save-mode;
+		sunxi-dis-signal-vol-sw;
+		vmmc = "vcc-sdcv";
+		vqmmc = "vcc-sdcvq33";
+		vdmmc = "vcc-sdcvd";
+	};
+*/
+
+
+&mmc0 { // 1c0f000 sdcard0
+	vmmc-supply = <&reg_vcc3v3>;
+	compatible = "allwinner,sun50i-h5-mmc",
+		     "allwinner,sun50i-a64-mmc";
+	clocks = <&ccu CLK_BUS_MMC0>, <&ccu CLK_MMC0>;
+	clock-names = "ahb", "mmc";
+	status = "okay";
+	bus-width = <4>;
+	max-frequency = <50000000>;
+	cap-sd-highspeed;
+	vcc-sdcv;
+
+	// aosp: ***pio(0x3a) 0x05 0x06 0x00 0x01 0x02 0xffffffff
+	//  gpio-166 (1c0f000.sdmmc cd    ) in  hi			[pin 166 (PF6): (MUX UNCLAIMED) 1c20800.pinctrl:166] cd mmc0
+	cd-gpios = <&pio 5 6 GPIO_ACTIVE_LOW>; 
+};
+
