@@ -12,7 +12,7 @@
 
 <b><i>Important: Users are solely responsible for making decisions about using this data and for collecting images to run third-party software.</b></i>
 
-# Board versions
+## Board versions
 
 ### * V1
 
@@ -50,7 +50,7 @@
 
 <b>GPIO:</b> LED1 (1c20800, 15-PA15), LED2 (1f02c00, 362-PL10), KEY_POWER (1f02c00.pinctrl:356, PL4)  (On this board you can get absolutely any gpio that is available on allwinner h5 (I’m just giving a list of those pins that you can get without much effort).) (many other pins are probably similar to V1.).
 
-# GPIO TABLE
+## GPIO TABLE
 <i>This table is not complete and was written more for version V1.</i>
 
 |CHIP|NUM|NAME|FUNCTION|
@@ -165,7 +165,7 @@
 |1f02c00.pinctrl|362|PL10|1f02c00.pinctrl:362, <b>V1, LED</b> status_led |
 |1f02c00.pinctrl|363|PL11|1f02000.s_cir, s_cir0 IR |
 
-# POWER TABLE
+## POWER TABLE
 
 <i>This table is not complete and was written more for version V1.</i>
 
@@ -177,7 +177,7 @@
 |5.0  |USB     |
 |3.3  |WIFI    |
 
-# UART (DEBUG)
+## UART (DEBUG)
 
 #### * V1 (115200, 3.3)
 
@@ -188,7 +188,7 @@
 <b>Just like on V1, the contacts are marked on the board.</b>
 
 
-# Quick Answers to Questions
+## Quick Answers to Questions
 
 #### • Will there be support for 1.2/1.5 GHz processor frequencies?
 
@@ -205,6 +205,6 @@ I2C support is not available, as all I2C buses in the device tree are currently 
 <b>TODO?</b> In theory, you can potentially use pins PL0 and PL1, which are intended for the WI-FI chip, for I2C communication. However, this would require additional configuration and testing. 
 
 
-# License
+## License
 
 All rights reserved.
