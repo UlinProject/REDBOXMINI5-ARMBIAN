@@ -8,11 +8,9 @@
 </div>
 
 
-<b><i>!!ATTENTION!!</i></b>
+<b><i>Important: The data in this repository is experimental and may contain errors. This repository was developed primarily for devices with V1 and V2 specifications. Devices with less RAM and permanent memory, or different processors, are not currently supported.</b></i>
 
-<b><i>WARNING: The data in this repository is experimental and may contain errors. I do not provide ready-made assemblies; it is up to the user to decide whether to use this data or not, to collect an image to run third-party software or not.</i></b>
-
-<b><i>WARNING: This repository was originally developed only for V1, later only the V2 version was added. Versions with less RAM and permanent memory and a different processor were not considered.</i></b>
+<b><i>Important: Users are solely responsible for making decisions about using this data and for collecting images to run third-party software.</b></i>
 
 ### Board versions
 
